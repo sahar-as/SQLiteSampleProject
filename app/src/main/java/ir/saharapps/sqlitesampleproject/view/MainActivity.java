@@ -1,8 +1,10 @@
-package ir.saharapps.sqlitesampleproject;
+package ir.saharapps.sqlitesampleproject.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import ir.saharapps.sqlitesampleproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
