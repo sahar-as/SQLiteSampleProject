@@ -2,6 +2,7 @@ package ir.saharapps.sqlitesampleproject.models;
 
 public class MovieDescription {
     private long id;
+    private long movieId;
     private String description;
 
     public MovieDescription(long id, String description) {
@@ -23,6 +24,14 @@ public class MovieDescription {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public long getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(long movieId) {
+        this.movieId = movieId;
     }
 
     @Override
