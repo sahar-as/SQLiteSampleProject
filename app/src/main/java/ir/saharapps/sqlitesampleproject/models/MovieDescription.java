@@ -5,8 +5,7 @@ public class MovieDescription {
     private long movieId;
     private String description;
 
-    public MovieDescription(long id, String description) {
-        this.id = id;
+    public MovieDescription(String description) {
         this.description = description;
     }
 

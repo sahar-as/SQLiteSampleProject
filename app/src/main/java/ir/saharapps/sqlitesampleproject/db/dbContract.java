@@ -9,9 +9,9 @@ public class dbContract {
     public static final String CREATE_MOVIE_TABLE =
             "CREATE TABLE " + movieEntry.TABLE_NAME + " ( " +
                     movieEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    movieEntry.COLUMN_NAME + " TEXT NOT NULL " +
-                    movieEntry.COLUMN_IMDB_RATE + " REAL NOT NULL " +
-                    movieEntry.COLUMN_CREATOR + " TEXT NOT NULL " +
+                    movieEntry.COLUMN_NAME + " TEXT NOT NULL, " +
+                    movieEntry.COLUMN_IMDB_RATE + " REAL NOT NULL, " +
+                    movieEntry.COLUMN_CREATOR + " TEXT NOT NULL, " +
                     "UNIQUE ( " + movieEntry._ID + " ) ON CONFLICT REPLACE )";
 
     public static final String CREATE_DESCRIPTIONS_TABLE =
@@ -19,7 +19,7 @@ public class dbContract {
                     descriptionEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     descriptionEntry.COLUMN_MOVIE_ID + " INTEGER NOT NULL REFERENCES " +
                     movieEntry._ID + ", " +
-                    descriptionEntry.COLUMN_DESCRIPTION + " TEXT NOT NULL " +
+                    descriptionEntry.COLUMN_DESCRIPTION + " TEXT NOT NULL, " +
                     "UNIQUE ( " + descriptionEntry._ID + " ) ON CONFLICT REPLACE )"; //This is an standard way of handling duplicate id insertions
 
     public static class movieEntry implements BaseColumns{

@@ -3,9 +3,12 @@ package ir.saharapps.sqlitesampleproject.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import ir.saharapps.sqlitesampleproject.R;
 import ir.saharapps.sqlitesampleproject.db.ApplicationDataSource;
+import ir.saharapps.sqlitesampleproject.db.MovieDataProvider;
+import ir.saharapps.sqlitesampleproject.models.Movie;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -24,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         mDataSource.open();
+        //just for first time to insert data to the tables
+//        MovieDataProvider movieDataProvider = new MovieDataProvider();
+//        for(Movie movie : movieDataProvider.moviesList){
+//            mDataSource.insertMovie(movie);
+//        }
     }
 
     @Override

@@ -6,12 +6,14 @@ public class Movie {
     private String name;
     private double imdbRate;
     private String creator;
-    private String description;
+    private int imageUrl;
+    private List<MovieDescription> description;
 
-    public Movie(String name, double imdbRate, String creator) {
+    public Movie(String name, double imdbRate, String creator, int imageUrl) {
         this.name = name;
         this.imdbRate = imdbRate;
         this.creator = creator;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -36,6 +38,22 @@ public class Movie {
 
     public void setCreator(String creator) {
         this.creator = creator;
+    }
+
+    public int getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(int imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public List<MovieDescription> getDescription() {
+        return description;
+    }
+
+    public void setDescription(List<MovieDescription> description) {
+        this.description = description;
     }
 
     @Override
