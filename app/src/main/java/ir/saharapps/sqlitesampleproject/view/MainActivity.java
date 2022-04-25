@@ -1,26 +1,31 @@
 package ir.saharapps.sqlitesampleproject.view;
 
+//Design and implemented by Sahar Asadian
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.List;
 
 import ir.saharapps.sqlitesampleproject.R;
 import ir.saharapps.sqlitesampleproject.db.ApplicationDataSource;
-import ir.saharapps.sqlitesampleproject.db.MovieDataProvider;
 import ir.saharapps.sqlitesampleproject.models.Movie;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     private ApplicationDataSource mDataSource;
+    List<Movie> movies;
+    private MovieAdapter adapter;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mRecyclerView = findViewById(R.id.rv_MainActivity_recycler);
 
         mDataSource = new ApplicationDataSource(this);
     }
@@ -34,16 +39,11 @@ public class MainActivity extends AppCompatActivity {
 //        for(Movie movie : movieDataProvider.moviesList){
 //            mDataSource.insertMovie(movie);
 //        }
-        mDataSource.getAllMovies();
+        movies = mDataSource.getAllMovies();
 
-        //Getting all movie data update and delete method:
-//        List<Movie> movies = mDataSource.getAllMovies();
-//        Movie movie = movies.get(0);
-//        movie.setName("Turning Red");
-//        mDataSource.updateMovie(movie);
-//        mDataSource.getAllMovies();
-//        mDataSource.deleteMovie(movie);
-//        mDataSource.getAllMovies();
+        adapter = new MovieAdapter(movies,this);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        mRecyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -51,4 +51,6 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         mDataSource.close();
     }
+    //Design and implemented by Sahar Asadian
+
 }

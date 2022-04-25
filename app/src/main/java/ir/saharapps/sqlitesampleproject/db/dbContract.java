@@ -2,7 +2,7 @@ package ir.saharapps.sqlitesampleproject.db;
 
 import android.provider.BaseColumns;
 
-import ir.saharapps.sqlitesampleproject.models.Movie;
+//Design and implemented by Sahar Asadian
 
 public class dbContract {
 

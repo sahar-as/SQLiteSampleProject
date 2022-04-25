@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.Selection;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -13,6 +12,8 @@ import java.util.List;
 
 import ir.saharapps.sqlitesampleproject.models.Movie;
 import ir.saharapps.sqlitesampleproject.models.MovieDescription;
+
+//Design and implemented by Sahar Asadian
 
 public class ApplicationDataSource {
     private static final String TAG = "ApplicationDataSource";
