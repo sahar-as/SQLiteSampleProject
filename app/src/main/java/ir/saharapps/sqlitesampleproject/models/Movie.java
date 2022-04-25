@@ -3,6 +3,7 @@ package ir.saharapps.sqlitesampleproject.models;
 import java.util.List;
 
 public class Movie {
+    private long id;
     private String name;
     private double imdbRate;
     private String creator;
@@ -14,6 +15,14 @@ public class Movie {
         this.imdbRate = imdbRate;
         this.creator = creator;
         this.imageUrl = imageUrl;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -59,9 +68,11 @@ public class Movie {
     @Override
     public String toString() {
         return "Movie{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", imdbRate=" + imdbRate +
                 ", creator='" + creator + '\'' +
+                ", imageUrl=" + imageUrl +
                 '}';
     }
 }

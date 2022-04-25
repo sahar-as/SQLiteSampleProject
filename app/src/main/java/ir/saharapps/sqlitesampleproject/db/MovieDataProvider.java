@@ -26,6 +26,7 @@ public class MovieDataProvider {
         moviesList.add(firstMovie);
 
         Movie secondMovie = new Movie("The Batman", 8.1, "Matt Reeves",R.drawable.movie2);
+        moviesList.add(secondMovie);
 
         movieDescriptionList.clear();
         movieDescriptionList.add(new MovieDescription("Ex-con artist Jimmy McGill turns into a small-time attorney and goes through a series of trials and tragedies, as he transforms into his alter ego Saul Goodman, a morally challenged criminal lawyer."));
